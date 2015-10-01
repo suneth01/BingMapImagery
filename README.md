@@ -29,6 +29,7 @@ var actual = await sut.GenerateMap(new MapRequest()
 ```
 ![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_1.Png)
 
+
 Example Usage: Map CenterPoint and Zoom level based best fit with.
 ```cs
 var actual =
@@ -47,7 +48,8 @@ var actual =
                                 }                                    
             });
 ```
-
+![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_3.Png)
+   
                         
 Exaple Usage:  Excplicit Bounding box based best fit with bing's provided default pushpin icon.
 ```cs
