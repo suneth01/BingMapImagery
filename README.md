@@ -27,6 +27,8 @@ var actual = await sut.GenerateMap(new MapRequest()
                                 }
              });
 ```
+![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_1.Png)
+
 Example Usage: Map CenterPoint and Zoom level based best fit with.
 ```cs
 var actual =
@@ -45,6 +47,7 @@ var actual =
                                 }                                    
             });
 ```
+
                         
 Exaple Usage:  Excplicit Bounding box based best fit with bing's provided default pushpin icon.
 ```cs
@@ -58,3 +61,4 @@ var actual = await sut.GenerateMap(new MapRequest()
     MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
 });
 ```            
+![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_2.Png)
