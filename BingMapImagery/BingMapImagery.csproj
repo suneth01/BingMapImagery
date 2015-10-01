@@ -55,7 +55,7 @@
     <Compile Include="Interfaces\IMapLayerDrawing.cs" />
     <Compile Include="Interfaces\IMapPushPinBuilder.cs" />
     <Compile Include="MapDescription.cs" />
-    <Compile Include="MapGenerator.cs" />
+    <Compile Include="BingMapImageryClient.cs" />
     <Compile Include="MapRESTApiClient.cs" />
     <Compile Include="MapPushpin.cs" />
     <Compile Include="MapCalculations.cs" />
@@ -69,7 +69,7 @@
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="MapPoint.cs" />
     <Compile Include="MapBoundingBox.cs" />
-    <Compile Include="Interfaces\IMapGenerator.cs" />
+    <Compile Include="Interfaces\IBingMapImageryClient.cs" />
     <Compile Include="Interfaces\IMapImageryProvider.cs" />
     <Compile Include="Interfaces\IMapMetadata.cs" />
     <Compile Include="Interfaces\IMapRESTApiClient.cs" />

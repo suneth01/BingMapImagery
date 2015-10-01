@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BingMapImagery.Tests
+﻿namespace BingMapImagery.Tests
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -10,15 +8,15 @@ namespace BingMapImagery.Tests
     using NUnit.Framework;    
 
     [TestFixture]
-    public class MapGeneratorIngerationTests
+    public class BingMapImageryClientIngerationTests
     {
-        private IMapGenerator sut;
+        private IBingMapImageryClient sut;
 
 
         [SetUp]
         public void Initialize()
-        {
-            sut = new MapGenerator("BING_API_KEY");
+        {            
+            sut = new BingMapImageryClient("BING_API_KEY");
         }
 
         [Test]
@@ -80,6 +78,13 @@ namespace BingMapImagery.Tests
                 {
                     MapImageScaleFactor = 1                    
                 },
+                Pushpins = new List<MapPushpin>
+                                                                {
+                                                                    new MapPushpin()
+                                                                        {
+                                                                            Coordinate    = new MapPoint(32.8096983m, -117.0667287m),                                                                            
+                                                                        }
+                                                                },
                 MapBoundingBoxType = MapBoundingBoxType.ExplicitBoundingBox,
                 MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
             });

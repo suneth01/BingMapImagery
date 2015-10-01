@@ -5,7 +5,7 @@ namespace BingMapImagery.Interfaces
     using System.IO;
     using System.Threading.Tasks;
 
-    internal interface IMapGenerator
+    internal interface IBingMapImageryClient
     {
         Task<byte[]> GenerateMap(MapRequest mapDescriptionRequest);
 

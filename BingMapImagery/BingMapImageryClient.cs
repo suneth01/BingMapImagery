@@ -14,7 +14,7 @@ namespace BingMapImagery
     using BingMapImagery.Interfaces;
 
     /// <inheritdoc />
-    internal class MapGenerator : IMapGenerator
+    internal class BingMapImageryClient : IBingMapImageryClient
     {
         private readonly IMapImageryProvider imageryProvider;
 
@@ -23,7 +23,7 @@ namespace BingMapImagery
         private readonly IMapLayerDrawing mapLayerDrawing;
 
         /// <inheritdoc />
-        public MapGenerator(
+        public BingMapImageryClient(
             string bingAPIKey
             //IAnalyticMapImageryProvider imageryProvider,
             //IAnalyticsMapCalculations mapCalculations
