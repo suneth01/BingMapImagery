@@ -61,4 +61,4 @@ var actual = await sut.GenerateMap(new MapRequest()
     MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
 });
 ```            
-![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_1.Png)
+![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_2.Png)
