@@ -30,7 +30,7 @@ var actual = await sut.GenerateMap(new MapRequest()
 ![alt tag](https://raw.githubusercontent.com/suneth01/BingMapImagery/master/SampleImages/Example_1.Png)
 
 
-Example Usage: Map CenterPoint and Zoom level based best fit with.
+Example Usage: Map CenterPoint and Zoom level based best fit with and Centerpoint pushpin marked as hidden.
 ```cs
 var actual =
     await
@@ -42,7 +42,6 @@ var actual =
                 CenterPushpin = new MapPushpin()
                                 {
                                     Coordinate = new MapPoint(32.8096983m, -117.0667287m),
-                                    Label = "XX",
                                     HideLabel = true,
                                     PushpinIconStyle = 7
                                 }                                    
