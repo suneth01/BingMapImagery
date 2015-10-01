@@ -3,6 +3,7 @@
 Providing Map Static Image Layers via Bing REST Api. Create Map Layers with bing icons as well your custom pushpin icons.
 
 Example Usage: Getting Map Image For Custom Pushpin Images.
+```
             var sut = new MapGenerator("BING_API_KEY");
             var actual = await sut.GenerateMap(new MapRequest()
                                              {
@@ -25,7 +26,7 @@ Example Usage: Getting Map Image For Custom Pushpin Images.
                                                                         },
                                                                 }
                                              });
-                                             
+```
 Example Usage: Map CenterPoint and Zoom level based best fit with.
             var actual =
                 await
