@@ -58,6 +58,13 @@ var actual = await sut.GenerateMap(new MapRequest()
     {
         MapImageScaleFactor = 1                    
     },
+    Pushpins = new List<MapPushpin>
+              {
+                  new MapPushpin()
+                      {
+                          Coordinate    = new MapPoint(32.8096983m, -117.0667287m),                                                                            
+                      }
+              },
     MapBoundingBoxType = MapBoundingBoxType.ExplicitBoundingBox,
     MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
 });
