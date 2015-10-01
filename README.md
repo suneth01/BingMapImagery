@@ -3,29 +3,29 @@
 Providing Map Static Image Layers via Bing REST Api. Create Map Layers with bing icons as well your custom pushpin icons.
 
 Example Usage: Getting Map Image For Custom Pushpin Images.
-```
-            var sut = new MapGenerator("BING_API_KEY");
-            var actual = await sut.GenerateMap(new MapRequest()
-                                             {
-                                                 MapDescription = new MapDescription()
-                                                                      {
-                                                                          MapImageScaleFactor = 1,
-                                                                          ImagerySet = ImagerySet.Road
-                                                                      },
-                                                 Pushpins = new List<MapPushpin>
-                                                                {
-                                                                    new MapPushpin()
-                                                                        {
-                                                                            Coordinate    = new MapPoint(32.8096983m, -117.0667287m),
-                                                                            CustomPushpinIcon = Resources.map_pin
-                                                                        },
-                                                                        new MapPushpin()
-                                                                        {
-                                                                            Coordinate    = new MapPoint(32.8074630m, -117.0743790m),
-                                                                            CustomPushpinIcon = Resources.map_pin
-                                                                        },
-                                                                }
-                                             });
+```cs
+var sut = new MapGenerator("BING_API_KEY");
+var actual = await sut.GenerateMap(new MapRequest()
+                                 {
+                                     MapDescription = new MapDescription()
+                                                          {
+                                                              MapImageScaleFactor = 1,
+                                                              ImagerySet = ImagerySet.Road
+                                                          },
+                                     Pushpins = new List<MapPushpin>
+                                                    {
+                                                        new MapPushpin()
+                                                            {
+                                                                Coordinate    = new MapPoint(32.8096983m, -117.0667287m),
+                                                                CustomPushpinIcon = Resources.map_pin
+                                                            },
+                                                            new MapPushpin()
+                                                            {
+                                                                Coordinate    = new MapPoint(32.8074630m, -117.0743790m),
+                                                                CustomPushpinIcon = Resources.map_pin
+                                                            },
+                                                    }
+                                 });
 ```
 Example Usage: Map CenterPoint and Zoom level based best fit with.
             var actual =
