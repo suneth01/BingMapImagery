@@ -1,14 +1,13 @@
 
-namespace BingMapImagery.Bing
+namespace BingMapImagery
 {
     using System;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
 
-    using BingMapImagery;
-    using BingMapImagery.Bing.Metadata;
     using BingMapImagery.Interfaces;
+    using BingMapImagery.Metadata;
 
     internal class BingMapPushpinLayerDrawing : IMapLayerDrawing
     {

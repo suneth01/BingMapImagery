@@ -8,10 +8,9 @@ namespace BingMapImagery
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using BingMapImagery.Bing;
-    using BingMapImagery.Bing.Metadata;
+    
     using BingMapImagery.Interfaces;
+    using BingMapImagery.Metadata;
 
     /// <inheritdoc />
     internal class BingMapImageryClient : IBingMapImageryClient

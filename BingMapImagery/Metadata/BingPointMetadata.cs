@@ -1,5 +1,5 @@
 ﻿
-namespace BingMapImagery.Bing.Metadata
+namespace BingMapImagery.Metadata
 {
     using System.Runtime.Serialization;
 

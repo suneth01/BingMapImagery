@@ -1,5 +1,5 @@
 
-namespace BingMapImagery.Bing
+namespace BingMapImagery
 {
     using System;
     using System.Collections.Generic;
@@ -8,8 +8,8 @@ namespace BingMapImagery.Bing
     using System.Linq;
     using System.Threading.Tasks;
 
-    using BingMapImagery.Bing.Metadata;
     using BingMapImagery.Interfaces;
+    using BingMapImagery.Metadata;
 
     internal class BingMapsRESTImageryProvider : IMapImageryProvider
     {

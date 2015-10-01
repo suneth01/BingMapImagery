@@ -3,7 +3,7 @@ namespace BingMapImagery.Interfaces
 {
     using System.Collections.Generic;
 
-    using BingMapImagery.Bing.Metadata;
+    using BingMapImagery.Metadata;
 
     internal interface IMapMetadata
     {

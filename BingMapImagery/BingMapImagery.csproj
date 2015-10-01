@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MapPushPinBuilder.cs" />
-    <Compile Include="Bing\BingMapPushpinLayerDrawing.cs" />
+    <Compile Include="BingMapPushpinLayerDrawing.cs" />
     <Compile Include="ImagerySet.cs" />
     <Compile Include="Interfaces\IMapLayerDrawing.cs" />
     <Compile Include="Interfaces\IMapPushPinBuilder.cs" />
@@ -59,13 +59,13 @@
     <Compile Include="MapRESTApiClient.cs" />
     <Compile Include="MapPushpin.cs" />
     <Compile Include="MapCalculations.cs" />
-    <Compile Include="Bing\BingMapsRESTImageryProvider.cs" />
-    <Compile Include="Bing\Metadata\BingMapMetadata.cs" />
-    <Compile Include="Bing\Metadata\BingMapMetadataResourceSet.cs" />
-    <Compile Include="Bing\Metadata\BingMapMetadataResponse.cs" />
-    <Compile Include="Bing\Metadata\BingOffsetMetadata.cs" />
-    <Compile Include="Bing\Metadata\BingPointMetadata.cs" />
-    <Compile Include="Bing\Metadata\BingPushPinMetadata.cs" />
+    <Compile Include="BingMapsRESTImageryProvider.cs" />
+    <Compile Include="Metadata\BingMapMetadata.cs" />
+    <Compile Include="Metadata\BingMapMetadataResourceSet.cs" />
+    <Compile Include="Metadata\BingMapMetadataResponse.cs" />
+    <Compile Include="Metadata\BingOffsetMetadata.cs" />
+    <Compile Include="Metadata\BingPointMetadata.cs" />
+    <Compile Include="Metadata\BingPushPinMetadata.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="MapPoint.cs" />
     <Compile Include="MapBoundingBox.cs" />
