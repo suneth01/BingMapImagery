@@ -28,30 +28,33 @@ var actual = await sut.GenerateMap(new MapRequest()
              });
 ```
 Example Usage: Map CenterPoint and Zoom level based best fit with.
-            var actual =
-                await
-                sut.GenerateMap(
-                    new MapRequest()
-                        {
-                            MapDescription = new MapDescription() { MapImageScaleFactor = 1, ZoomLevel = 15, ImagerySet = ImagerySet.Aerial },
-                            MapBoundingBoxType = MapBoundingBoxType.CenterPushPin,
-                            CenterPushpin = new MapPushpin()
-                                            {
-                                                Coordinate = new MapPoint(32.8096983m, -117.0667287m),
-                                                Label = "XX",
-                                                HideLabel = true,
-                                                PushpinIconStyle = 7
-                                            }                                    
-                        });
-                        
-                        
-Example Usage:  Excplicit Bounding box based best fit with bing's provided default pushpin icon.
-            var actual = await sut.GenerateMap(new MapRequest()
+```cs
+var actual =
+    await
+    sut.GenerateMap(
+        new MapRequest()
             {
-                MapDescription = new MapDescription()
-                {
-                    MapImageScaleFactor = 1                    
-                },
-                MapBoundingBoxType = MapBoundingBoxType.ExplicitBoundingBox,
-                MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
+                MapDescription = new MapDescription() { MapImageScaleFactor = 1, ZoomLevel = 15, ImagerySet = ImagerySet.Aerial },
+                MapBoundingBoxType = MapBoundingBoxType.CenterPushPin,
+                CenterPushpin = new MapPushpin()
+                                {
+                                    Coordinate = new MapPoint(32.8096983m, -117.0667287m),
+                                    Label = "XX",
+                                    HideLabel = true,
+                                    PushpinIconStyle = 7
+                                }                                    
             });
+```
+                        
+Exaple Usage:  Excplicit Bounding box based best fit with bing's provided default pushpin icon.
+```cs
+var actual = await sut.GenerateMap(new MapRequest()
+{
+    MapDescription = new MapDescription()
+    {
+        MapImageScaleFactor = 1                    
+    },
+    MapBoundingBoxType = MapBoundingBoxType.ExplicitBoundingBox,
+    MapExplicitBoundingBox = new MapBoundingBox(new MapPoint(32.8096983m, -117.0667287m), new MapPoint(32.8074630m, -117.0743790m))
+});
+```            
