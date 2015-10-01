@@ -16,13 +16,13 @@
         [SetUp]
         public void Initialize()
         {            
-            sut = new BingMapImageryClient("BING_API_KEY");
+            this.sut = new BingMapImageryClient("BING_API_KEY");
         }
 
         [Test]
         public async Task MapRequestWithPushpinList()
-        {            
-            var actual = await sut.GenerateMap(new MapRequest()
+        {
+            var actual = await this.sut.GenerateMap(new MapRequest()
                                              {
                                                  MapDescription = new MapDescription()
                                                                       {
@@ -52,7 +52,7 @@
         {            
             var actual =
                 await
-                sut.GenerateMap(
+                this.sut.GenerateMap(
                     new MapRequest()
                         {
                             MapDescription = new MapDescription() { MapImageScaleFactor = 1, ZoomLevel = 15, ImagerySet = ImagerySet.Aerial },
@@ -72,7 +72,7 @@
         [Test]
         public async void MapRequestWithExplicitBoundingBox()
         {
-            var actual = await sut.GenerateMap(new MapRequest()
+            var actual = await this.sut.GenerateMap(new MapRequest()
             {
                 MapDescription = new MapDescription()
                 {
