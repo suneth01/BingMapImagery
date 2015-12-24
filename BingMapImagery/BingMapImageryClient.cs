@@ -21,6 +21,8 @@ namespace BingMapImagery
 
         private readonly IMapLayerDrawing mapLayerDrawing;
 
+        private readonly IMapShapeDrawing mapShapeLayerDrawing;
+
         /// <inheritdoc />
         public BingMapImageryClient(
             string bingAPIKey
@@ -54,6 +56,8 @@ namespace BingMapImagery
             this.mapCalculations = new MapCalculations();
 
             this.mapLayerDrawing = new BingMapPushpinLayerDrawing(new MapPushpinBuilder());
+
+            this.mapShapeLayerDrawing = new BingMapGeoJSONShapeDrawing(this.imageryProvider);
         }                
 
         /// <inheritdoc />
@@ -126,12 +130,19 @@ namespace BingMapImagery
                     var mapMetadata =
                         await this.imageryProvider.GetStaticMapMetaData(mapAreaBoundingBox, mapDescriptionRequest);
 
-                    var pushpinMapLayer = this.mapLayerDrawing.GetMapLayer(mapMetadata, mapDescriptionRequest);
+                    
+                    var mapShapeLayer = await this.mapShapeLayerDrawing.DrawShapeLayerAsync(mapDescriptionRequest.Geometry, mapAreaBoundingBox, mapDescriptionRequest.MapDescription);
+                               
 
-                    var mapLayers = new List<Image>()
-                                        {                                
-                                            pushpinMapLayer
-                                        };
+                    var mapLayers = new List<Image>();
+
+                    if (mapShapeLayer != null)
+                    {
+                        mapLayers.Add(mapShapeLayer);
+                    }
+
+                    var pushpinMapLayer = this.mapLayerDrawing.GetMapLayer(mapMetadata, mapDescriptionRequest);
+                    mapLayers.Add(pushpinMapLayer);
 
                     mapImage = this.MergeMapLayers(mapImage, mapLayers);
                 }                
@@ -143,10 +154,20 @@ namespace BingMapImagery
                     throw new ArgumentNullException("MapExplicitBoundingBox cant be null when using MapBoundingBoxType.ExplicitBoundingBox mode.");                    
                 }
 
+                var mapLayers = new List<Image>();
+
                 mapAreaBoundingBox = mapDescriptionRequest.MapExplicitBoundingBox;
                 mapImage = await this.imageryProvider.GetStaticMapImage(
                 mapAreaBoundingBox,
                 mapDescriptionRequest);
+
+                var mapShapeLayer = await this.mapShapeLayerDrawing.DrawShapeLayerAsync(mapDescriptionRequest.Geometry, mapAreaBoundingBox, mapDescriptionRequest.MapDescription);
+                if (mapShapeLayer != null)
+                {
+                    mapLayers.Add(mapShapeLayer);
+                }
+
+                mapImage = this.MergeMapLayers(mapImage, mapLayers);
 
             }
             else if (mapDescriptionRequest.MapBoundingBoxType == MapBoundingBoxType.CenterPushPin)

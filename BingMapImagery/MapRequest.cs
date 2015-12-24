@@ -1,8 +1,9 @@
 ﻿namespace BingMapImagery
-{
-    using System;
+{    
     using System.Collections.Generic;
-    
+
+    using GeoJSON.Net.Geometry;
+
     /// <summary>
     /// Description for map request.
     /// </summary>    
@@ -32,5 +33,10 @@
         /// Gets map center point to use with zoom level center point boundig box type.
         /// </summary>
         public MapPushpin CenterPushpin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the geometry.
+        /// </summary>
+        public IGeometryObject Geometry { get; set; }
     }
 }
